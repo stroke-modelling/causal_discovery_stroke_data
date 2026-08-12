@@ -1,0 +1,23 @@
+name: causal
+channels:
+  - defaults
+  - conda-forge
+  - pytorch
+dependencies:
+  - numpy
+  - pandas
+  - pip
+  - python>=3.12
+  - matplotlib
+  - seaborn
+  - scipy
+  - pip:
+    - dowhy
+    - gcastle
+    - graphviz
+    - jupyterlab
+    - networkx
+    - setuptools
+    - scikit-learn
+    - twine
+    - wheel
