@@ -1,0 +1,22 @@
+Notes for effects_linreg_allpatients.csv
+
+Based on SAMueL-3 data and the usual thrombolysis/outcome DAG.
+
+One-hot-encode the stroke team columns.
+
+Remove rows with arrival-to-scan time at least 240 minutes or onset-to-arrival time at least 240 minutes. Note that this seems to remove a few of the stroke teams.
+
+Define new features:
+
+| Old column | New column | Description |
+| --- | --- | --- |
+| age | age_80plus| Age is at least 80 |
+| stroke_severity | stroke_severity_mild | Stroke severity is less than 5 |
+| stroke_severity | stroke_severity_moderate | Stroke severity is at least 5 and no more than 30 |
+| stroke_severity | stroke_severity_severe | Stroke severity is more than 30 |
+| discharge_disability | discharge_util | Discharge utility using Dijkland conversion from mRS score to utility |
+| discharge_disability | discharge_mrsleqx for x from 0 to 5 inclusive | Discharge disability is less than x for x from 0 to 5 inclusive |
+
+Final features: 'onset_during_sleep', 'precise_onset_known', 'atrial_fibrillation', 'afib_anticoagulant', 'prior_util', 'age_80plus', 'stroke_severity_mild', 'stroke_severity_moderate', 'stroke_severity_severe', 'arrival_to_scan_time',  2, 3, 5, 6, 7, 8, 9, 11, 12, 13, 14, 18, 20, 21, 24, 25, 28, 29, 31, 32, 33, 34, 36, 38, 39, 40, 42, 43, 45, 47, 48, 49, 51, 55, 56, 58, 60, 61, 62, 65, 66, 68, 70, 71, 72, 73, 74, 76, 77, 78, 80, 82, 83, 85, 87, 93, 94, 95, 98, 99, 100, 103, 104, 106, 107, 108, 'thrombolysis', 'discharge_util', 'discharge_mrsleq2'
+
+Remove any row with missing values in any of the feature columns.
