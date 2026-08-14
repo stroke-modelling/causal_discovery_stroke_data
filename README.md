@@ -49,7 +49,7 @@ A Directed Acyclic Graph (DAG) provides a visual representation of causal relati
 For example:
 
 <div align="center">
-<img src="Example DAG.png">
+<img src="images/Example DAG.png">
 </div>
 
 <h3>
@@ -61,7 +61,7 @@ Because the data is simulated, the underlying causal structure is known.
 This provides a baseline against which causal discovery algorithms can be evaluated.
 
 <div align="center">
-<img src="final_results_11_08_labelled_DAG.png">
+<img src="images/final_results_11_08_labelled_DAG.png">
 </div>
 
 <h3>
